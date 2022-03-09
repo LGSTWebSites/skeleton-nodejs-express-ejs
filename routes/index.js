@@ -6,7 +6,6 @@ const Autor = require('../models/autor');
 router.get('/', async function(req, res, next) {
   const autores = await Autor.selecionar();
   res.json(autores.rows);
-  res.render('index', { title: 'Express' });
 });
 
 module.exports = router;

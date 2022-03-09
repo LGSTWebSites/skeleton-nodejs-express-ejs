@@ -1,7 +1,7 @@
 const db = require("../db")
 
 class Autor{
-  static async inserir(){
+  static async inserir(data){
       const connect = await db.connect(data);
     const sql = "insert into autores(nome, sobrenome, dataNascomento) values($1, $2, $3)";
     const values = [data.nome, data.sobrenome, data.dataNascomento]
