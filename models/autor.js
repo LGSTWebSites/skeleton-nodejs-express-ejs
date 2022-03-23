@@ -3,8 +3,8 @@ const db = require("../db")
 class Autor{
   static async inserir(data){
       const connect = await db.connect(data);
-    const sql = "insert into autores(nome, sobrenome, dataNascomento) values($1, $2, $3)";
-    const values = [data.nome, data.sobrenome, data.dataNascomento]
+    const sql = "insert into autores(nome, sobrenome, datanascomento) values($1, $2, $3)";
+    const values = [data.nome, data.sobrenome, data.datanascomento]
     return await connect.query(sql,values)
   }
   static async selecionar(){
