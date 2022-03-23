@@ -9,32 +9,20 @@ router.get('/', async function(req, res, next) {
 });
 
 router.post('/inserir', async function(req, res, next) {
-  /*const autor = {
-    nome:"Ronaldo",
-    sobrenome:"Nazario",
-    datanascomento:"2022-04-16"
-  }
-  const autores = await Autor.inserir(autor);
-  res.json(autores);*/
-  console.log(Req.body);
+  const autores = await Autor.inserir(req.body);
+  res.json(req.body);
 }
 );
 
 router.get('/atualizar', async function(req, res, next) {
-  const autor = {
-    nome:"Ronaldo",
-    sobrenome:"Nazario",
-    datanascomento:"2022-04-16",
-    id: 1
-  }
-  const autores = await Autor.atualizar(autor);
-  res.json(autores);
+  const autores = await Autor.atualizar(req.body);
+  res.json(req.body);
 }
 );
 
 router.get('/deletar', async function(req, res, next) {
   const autores = await Autor.deletar(5);
-  res.json(autores);
+  res.json(req.body);
 }
 );
 
